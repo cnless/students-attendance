@@ -2,6 +2,7 @@ package com.dw;
 
 import com.dw.mapper.MaUserMapper;
 import com.dw.pojo.MaUser;
+import com.dw.service.MaUserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,16 +16,16 @@ class StudentsAttendanceApplicationTests {
     @Autowired
     DataSource dataSource;
     @Autowired
-    MaUserMapper maUserMapper;
+    MaUserService maUserService;
     @Test
     void contextLoads() throws SQLException {
         System.out.println(dataSource.getClass());
         System.out.println(dataSource.getConnection());
-        /*List<MaUser> maUserList=maUserMapper.queryMaUserList();
-        for (MaUser maUser : maUserList) {
+        List<MaUser> list=maUserService.queryMaUserList();
+        for (MaUser maUser : list) {
             System.out.println(maUser);
-        }*/
-        System.out.println(maUserMapper.queryMaUserById("5720181405"));
+        }
+
     }
 
 }
