@@ -2,6 +2,7 @@ package com.dw.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
+import com.alibaba.druid.support.http.WebStatFilter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -9,7 +10,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 @Configuration
 public class DruidConfig {
@@ -31,12 +34,21 @@ public class DruidConfig {
         return bean;
     }
     @Bean
-    public FilterRegistrationBean webStatFilter(){
+    public FilterRegistrationBean webStatFilter() {
         FilterRegistrationBean bean = new FilterRegistrationBean();
-        HashMap<String,String> initParameters=new HashMap<>();
-        //这些东西不进行统计
-        initParameters.put("exclusions","*.js,*.css,/druid/*");
-        bean.setInitParameters(initParameters);
+        bean.setFilter(new WebStatFilter());
+
+
+        //exclusions：设置哪些请求进行过滤排除掉，从而不进行统计
+        Map<String, String> initParams = new HashMap<>();
+        initParams.put("exclusions", "*.js,*.css,/druid/*,/jdbc/*");
+        bean.setInitParameters(initParams);
+
+
+        //"/*" 表示过滤所有请求
+        bean.setUrlPatterns(Arrays.asList("/*"));
         return bean;
     }
-}
+
+
+    }
