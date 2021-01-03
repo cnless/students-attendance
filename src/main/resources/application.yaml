@@ -3,9 +3,13 @@ spring:
     basename: i18n.login
   thymeleaf:
     cache: false
+    excluded-view-names: /*
+    prefix: classpath:/templates/
+    suffix: .html
   mvc:
     format:
       date: yyyy-MM-dd
+    static-path-pattern: /**
   datasource:
     username: root
     password: 123456
