@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dw.mapper.MaUserRoleMapper">
+    <select id="getMaUserRole" resultType="MaUserRole">
+        select * from ma_user_role
+    </select>
+    <select id="getMaUserRoleById" parameterType="String" resultType="MaUserRole">
+        select * from ma_user_role where USER_ID=#{userId}
+    </select>
+    <insert id="addMaUserRole" parameterType="MaUserRole">
+        insert into ma_user_role (USER_ID,ROLE_ID)
+        values (#{UserId},#{RoleId})
+    </insert>
+    <delete id="deleteMaUserRoleById" parameterType="String">
+        delete from ma_user_role where User_ID=#{userIdKey} and Role_ID=#{roleIdKey}
+    </delete>
+    <update id="updateMaUserRoleById" parameterType="MaUserRole" >
+        update ma_user_role set USER_ID=#{new_userId},ROLE_ID=#{new_roleId}
+        where USER_ID=#{old_userId} and ROLE_ID=#{old_roleId}
+
+    </update>
+</mapper>

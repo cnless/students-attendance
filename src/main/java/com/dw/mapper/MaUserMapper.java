@@ -10,4 +10,5 @@ import java.util.List;
 public interface MaUserMapper {
     List<MaUser> queryMaUserList();
     MaUser queryMaUserById(String userId);
+
 }

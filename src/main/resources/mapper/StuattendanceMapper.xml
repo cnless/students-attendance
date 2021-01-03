@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dw.mapper.StuattendanceMapper">
+    <select id="getStuattendanceList" resultType="Stuattendance">
+        select * from stuattendance
+    </select>
+    <select id="getStuattendanceById" parameterType="String" resultType="Stuattendance">
+        select * from stuattendance where ATTENDANCE_ID=#{attendanceId}
+    </select>
+    <insert id="addStuattendancele" parameterType="Stuattendance">
+        insert into stuattendance (ATTENDANCE_ID,USER_ID,COURSEID,CLASSROOMID,DATE_DAY,ATTEN_STATUS)
+        values (#{AttendanceId},#{UserId},#{Courseid},#{Classroomid},#{DateDay},#{AttenStatus})
+    </insert>
+    <delete id="deleteStuattendanceById" parameterType="String">
+        delete from stuattendance where ATTENDANCE_ID=#{attendanceId}
+    </delete>
+    <update id="updateStuattendanceById" parameterType="Stuattendance">
+        update stuattendance set USER_ID=#{UserId},COURSEID=#{Courseid},CLASSROOMID=#{Classroomid},DATE_DAY=#{DateDay},ATTEN_STATUS=#{AttenStatus}
+        where ATTENDANCE_ID=#{AttendanceId}
+    </update>
+</mapper>

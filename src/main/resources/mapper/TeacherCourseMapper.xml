@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dw.mapper.TeacherCourseMapper">
+    <select id="getTeacherCourseList" resultType="TeacherCourse">
+        select * from teacher_course
+    </select>
+    <select id="getTeacherCourseById" parameterType="String" resultType="TeacherCourse">
+        select * from teacher_course where USER_ID=#{userId}
+    </select>
+    <insert id="addTeacherCourse" parameterType="TeacherCourse">
+        insert into teacher_course (USER_ID,COURSEID,CLASSID)
+        values (#{UserId},#{Courseid},#{Classid})
+    </insert>
+    <delete id="deleteTeacherCourseById" parameterType="String">
+        delete from teacher_course where USER_ID=#{userId}
+    </delete>
+    <update id="updateTeacherCourseById" parameterType="TeacherCourse">
+        update teacher_course set COURSEID=#{Courseid},CLASSID=#{Classid}
+        where USER_ID=#{UserId}
+    </update>
+</mapper>

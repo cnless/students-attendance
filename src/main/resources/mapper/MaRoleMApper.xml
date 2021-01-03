@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dw.mapper.MaRoleMapper">
+    <select id="getMaRoleList" resultType="MaRole">
+        select * from ma_role
+    </select>
+    <select id="getMaRoleById" resultType="MaRole">
+        select * from ma_role where ROLE_ID=#{roleId}
+    </select>
+    <insert id="addMaRole" parameterType="MaRole">
+        insert into ma_role (ROLE_ID,ROLE_DESC,DATA_SCOPE)
+        values (#{RoleId},#{RoleDesc},#{DataScope})
+    </insert>
+    <delete id="deleteMaRoleById">
+        delete from ma_role where ROLE_ID=#{roleId}
+    </delete>
+    <update id="updateMaRoleById" parameterType="MaRole">
+        update ma_role set ROLE_DESC=#{RoleDesc},DATA_SCOPE=#{DataScope} where ROLE_ID=#{RoleId}
+    </update>
+</mapper>

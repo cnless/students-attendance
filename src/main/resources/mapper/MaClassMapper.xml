@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dw.mapper.MaClassMapper">
+    <select id="getMaClassList" resultType="MaClass">
+        select * from ma_class
+    </select>
+    <select id="getMaClassById" parameterType="String" resultType="MaClass">
+        select * from ma_class where CLASS_ID=#{classId}
+    </select>
+    <insert id="addMaClass" parameterType="MaClass">
+        insert into ma_class (CLASS_ID,CLASS_NAME)
+        values (#{ClassId},#{ClassName})
+    </insert>
+    <delete id="deleteMaClassById">
+        delete from ma_class where CLASS_ID=#{classId}
+    </delete>
+    <update id="updateMaClassById" parameterType="MaClass">
+        update ma_class set CLASS_NAME=#{ClassName} where CLASS_ID=#{ClassId}
+    </update>
+</mapper>
