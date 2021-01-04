@@ -23,14 +23,14 @@ public class LoginController {
         return "index";
     }
     @PostMapping("/main")
-    public String login(String username,String password,Model model) {
+    public String login(String username,String password,Model model,HttpSession session) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
         try {
 
             subject.login(token);
             MaUser currentUser=maUserService.queryMaUserById(username);
-            model.addAttribute("maUser",currentUser);
+            session.setAttribute("maUser",currentUser);
             model.addAttribute("currentPage","main.jsp");
             return "jsp/main";
         } catch (UnknownAccountException e) {
@@ -41,6 +41,11 @@ public class LoginController {
             return "index";
         }
     }
+    @GetMapping("/tomain")
+    public String login(Model model){
+        model.addAttribute("currentPage","main.jsp");
+        return "jsp/main";
+    }
     @RequestMapping("/noauth")
     @ResponseBody
     public String unauthorized(){
@@ -49,6 +54,6 @@ public class LoginController {
     @RequestMapping("/logout")
     public String logout(HttpSession session){
         session.invalidate();
-        return "index";
+        return "redirect:index";
     }
 }
