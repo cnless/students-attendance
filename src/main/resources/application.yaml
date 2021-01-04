@@ -12,7 +12,7 @@ spring:
     static-path-pattern: /**
   datasource:
     username: root
-    password: 123456
+    password: 333
     url: jdbc:mysql://localhost:3306/sa?useSSL=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
