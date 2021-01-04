@@ -28,7 +28,7 @@ public class ShiroConfig {
         *
         * */
         //filterMap.put("/user/add","authc");
-        //filterMap.put("","authc");
+        filterMap.put("/tomain","authc");
         //filterMap.put("/user/add","perms[user:add]");
         //filterMap.put("/user/update","perms[user:update]");
         bean.setFilterChainDefinitionMap(filterMap);
