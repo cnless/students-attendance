@@ -11,7 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AskLeave {
-    private String LeaveId;
+    private int LeaveId;
     private String UserId;
     private String UserName;
     private Date StartDate;

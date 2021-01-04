@@ -6,14 +6,14 @@
     <select id="getStuattendanceList" resultType="Stuattendance">
         select * from stuattendance
     </select>
-    <select id="getStuattendanceById" parameterType="String" resultType="Stuattendance">
+    <select id="getStuattendanceById" parameterType="int" resultType="Stuattendance">
         select * from stuattendance where ATTENDANCE_ID=#{attendanceId}
     </select>
     <insert id="addStuattendancele" parameterType="Stuattendance">
-        insert into stuattendance (ATTENDANCE_ID,USER_ID,COURSEID,CLASSROOMID,DATE_DAY,ATTEN_STATUS)
-        values (#{AttendanceId},#{UserId},#{Courseid},#{Classroomid},#{DateDay},#{AttenStatus})
+        insert into stuattendance (USER_ID,COURSEID,CLASSROOMID,DATE_DAY,ATTEN_STATUS)
+        values (#{UserId},#{Courseid},#{Classroomid},#{DateDay},#{AttenStatus})
     </insert>
-    <delete id="deleteStuattendanceById" parameterType="String">
+    <delete id="deleteStuattendanceById" parameterType="int">
         delete from stuattendance where ATTENDANCE_ID=#{attendanceId}
     </delete>
     <update id="updateStuattendanceById" parameterType="Stuattendance">

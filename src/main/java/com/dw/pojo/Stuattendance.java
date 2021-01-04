@@ -10,7 +10,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Stuattendance {
-    private String AttendanceId;
+    private int AttendanceId;
     private String UserId;
     private String Courseid;
     private String Classroomid;

@@ -12,11 +12,11 @@ public interface StuattendanceMapper {
     //查询全部 List
     List<Stuattendance> getStuattendanceList();
     //查询根据ID
-    Stuattendance getStuattendanceById(String attendanceId);
+    Stuattendance getStuattendanceById(int attendanceId);
     //插入
     int addStuattendancele(Stuattendance stuattendance);
     //删除根据ID
-    int deleteStuattendanceById(String attendanceId);
+    int deleteStuattendanceById(int attendanceId);
     //修改根据ID
     int updateStuattendanceById(Stuattendance stuattendance);
 }

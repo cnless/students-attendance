@@ -10,8 +10,8 @@
         select * from ask_leave where LEAVE_ID=#{leaveId}
     </select>
     <insert id="addAskLeave" parameterType="AskLeave">
-        insert into ask_leave(LEAVE_ID,USER_ID,USER_NAME,START_DATE,END_DATE,RESSON,LEAVE_STATUS)
-        values (#{LeaveId},#{UserId},#{UserName},#{StartDate},#{EndDate},#{Resson},#{LeaveStatus})
+        insert into ask_leave(USER_ID,USER_NAME,START_DATE,END_DATE,RESSON,LEAVE_STATUS)
+        values (#{UserId},#{UserName},#{StartDate},#{EndDate},#{Resson},#{LeaveStatus})
     </insert>
     <delete id="deleteAskLeaveById">
         delete from ask_leave where LEAVE_ID=#{leaveId}
