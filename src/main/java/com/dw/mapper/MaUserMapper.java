@@ -10,5 +10,8 @@ import java.util.List;
 public interface MaUserMapper {
     List<MaUser> queryMaUserList();
     MaUser queryMaUserById(String userId);
+    int addMaUser(MaUser maUser);
+    int deleteMaUser(String userId);
+    int updateMaUser(MaUser maUser);
 
 }

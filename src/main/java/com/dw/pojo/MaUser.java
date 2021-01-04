@@ -11,7 +11,7 @@ public class MaUser {
     private String userId;
     private String userName;
     private String passwd;
-    private String lastUpadteDt;
+    private String lastUpdateDt;
     private String lastUpdateUser;
     private String classid;
 }

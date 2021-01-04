@@ -10,30 +10,29 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
+    @Autowired
+    MaUserService maUserService;
     @RequestMapping("/toLogin")
     public String toLogin(){
         return "index";
     }
-    @RequestMapping("/login")
+    @PostMapping("/main")
     public String login(String username,String password,Model model) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
         try {
 
             subject.login(token);
-            double[] t={123,343244,53,345,332};
-            model.addAttribute("t",t);
-            return "main";
+            MaUser currentUser=maUserService.queryMaUserById(username);
+            model.addAttribute("maUser",currentUser);
+            model.addAttribute("currentPage","main.jsp");
+            return "jsp/main";
         } catch (UnknownAccountException e) {
             model.addAttribute("msg","用户名不存在");
             return "index";
@@ -47,9 +46,9 @@ public class LoginController {
     public String unauthorized(){
         return "未经授权无法访问";
     }
-    @GetMapping("/show")
-    public String hello(Model model, String name){
-        model.addAttribute("name",name);
-        return "jsp/show";
+    @RequestMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "index";
     }
 }

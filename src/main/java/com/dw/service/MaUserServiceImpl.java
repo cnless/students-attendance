@@ -22,4 +22,19 @@ public class MaUserServiceImpl implements MaUserService{
     public MaUser queryMaUserById(String userId) {
         return maUserMapper.queryMaUserById(userId);
     }
+
+    @Override
+    public int addMaUser(MaUser maUser) {
+        return maUserMapper.addMaUser(maUser);
+    }
+
+    @Override
+    public int deleteMaUser(String userId) {
+        return maUserMapper.deleteMaUser(userId);
+    }
+
+    @Override
+    public int updateMaUser(MaUser maUser) {
+        return maUserMapper.updateMaUser(maUser);
+    }
 }

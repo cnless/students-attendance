@@ -14,7 +14,7 @@
 </head>
 
 <body class="text-center">
-<form class="form-signin" th:action="@{/login}">
+<form class="form-signin" th:action="@{/main}" method="post">
     <img class="mb-4" th:src="@{/img/logo.png}" alt="" width="89" height="91">
     <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}"></h1>
     <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
