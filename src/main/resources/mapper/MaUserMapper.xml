@@ -18,7 +18,7 @@
     </delete>
     <update id="updateMaUser">
         update ma_user set
-        USER_NAME=#{userName},PASSWD=#{PASSWD},LAST_UPDATE_DT=#{lastUpdateDt},
+        USER_NAME=#{userName},PASSWD=#{passwd},LAST_UPDATE_DT=#{lastUpdateDt},
         LAST_UPDATE_USER=#{lastUpdateUser},CLASSID=#{classid}
         where USER_ID=#{userId}
     </update>

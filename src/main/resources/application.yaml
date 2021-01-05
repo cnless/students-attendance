@@ -8,7 +8,7 @@ spring:
     suffix: .html
   mvc:
     format:
-      date: yyyy-MM-dd
+      date: yyyy-MM-dd hh:mm:ss
     static-path-pattern: /**
   datasource:
     username: root

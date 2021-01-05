@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: 25141
   Date: 2021/1/3
@@ -40,7 +41,27 @@
     </style>
 </head>
 <body>
+
 <jsp:include page="topbar.jsp"></jsp:include>
+<script type="text/javascript">
+    function cantempty(){
+        $(".noNull").each(function(){
+            if($("#userName").val()===""){
+                alert("不能为空");
+                return false;
+            }
+            if($("#passwd").val()===""){
+                alert("不能为空");
+                return false;
+            }
+            if($("#classid").val()===""){
+                alert("不能为空");
+                return false;
+            }
+
+        })
+    }
+</script>
 
 
 <div class="container-fluid">
@@ -48,7 +69,29 @@
         <jsp:include page="sidebar.jsp"></jsp:include>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <form action="/updateUser" method="post">
+                <input type="hidden" name="userId" value="${maUser.getUserId()}">
+                <div class="form-group">
+                    <label>姓名</label>
+                    <input value="${maUser.getUserName()}" type="text" class="form-control" placeholder="请输入姓名" name="userName" id="userName">
+                </div>
+                <div class="form-group">
+                    <label>密码</label>
+                    <input value="${maUser.getPasswd()}" type="password" class="form-control" placeholder="请输入密码" name="passwd" id="passwd">
+                </div>
+                <input type="hidden" name="lastUpdateDt" value="${ludt}">
+                <div class="form-group">
+                    <label>修改人</label>
+                    <input value="${maUser.getLastUpdateUser()}" type="text" class="form-control" placeholder="请输入修改人名字" name="lastUpdateName">
+                </div>
+                <div class="form-group">
+                    <label>班级</label>
+                    <input value="${maUser.getClassid()}" type="text" class="form-control" placeholder="请输入班级" name="classid" id="classid">
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="bubmi()">修改</button>
+                <label style="color: red">${msg}</label>
 
+            </form>
         </main>
     </div>
 </div>
@@ -93,6 +136,28 @@
             }
         }
     });
+</script>
+<script type="text/javascript">
+    function bubmi(){
+        $(".noNull").each(function(){
+            var name = $(this).attr("name");
+            if($(this).val()==""){
+                alert($(this).attr('notNull')+"不能为空");return false;
+            }
+            if($(this).attr("type")=="radio"){
+                if ($("input[name='"+name+"']:checked").size() < 1){
+                    alert($(this).attr('notNull')+"不能为空!");
+                    return false;
+                }
+            }
+            if($(this).attr("type")=="checkbox"){
+                if ($('input[name="'+name+'"]:checked').size() < 1){
+                    alert($(this).attr('notNull')+"不能为空!");
+                    return false;
+                }
+            }
+        })
+    }
 </script>
 
 </body>

@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
@@ -19,13 +21,8 @@ class StudentsAttendanceApplicationTests {
     MaUserService maUserService;
     @Test
     void contextLoads() throws SQLException {
-        System.out.println(dataSource.getClass());
-        System.out.println(dataSource.getConnection());
-        List<MaUser> list=maUserService.queryMaUserList();
-        for (MaUser maUser : list) {
-            System.out.println(maUser);
-        }
 
+        System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
     }
 
 }
