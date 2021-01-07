@@ -34,6 +34,11 @@ public class StuattendanceServiceImpl implements StuattendanceService{
     }
 
     @Override
+    public List<Stuattendance> getStuattendanceByclassId(String classId) {
+        return stuattendanceMapper.getStuattendanceByClassid(classId);
+    }
+
+    @Override
     public boolean addStuattendancele(Stuattendance stuattendance) {
         boolean flag=false;
         if(stuattendanceMapper.addStuattendancele(stuattendance)>0){

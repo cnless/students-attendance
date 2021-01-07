@@ -17,6 +17,8 @@ public interface StuattendanceMapper {
     Stuattendance getStuattendanceById(int attendanceId);
     //查询根据UserID
     List<Stuattendance> getStuattendanceByUserId(String userId);
+    //按班级查看出勤情况
+    List<Stuattendance> getStuattendanceByClassid(String classId);
     //插入
     int addStuattendancele(Stuattendance stuattendance);
     //删除根据ID

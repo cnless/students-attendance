@@ -29,16 +29,41 @@
             <div class="search">
                 <form method="get" action="/Teacher.do">
                     <span>班级</span>
-                    <select name="queryUserRole">
-                        <c:if test="${roleList != null }">
+                    <select name="classname">
+                        <c:if test="${classList != null }">
                             <option value="0">--请选择--</option>
-                            <c:forEach var="role" items="${roleList}">
-                                <option <c:if test="${role.id == queryUserRole }">selected="se ected"</c:if>
-                                        value="${role.id}">${role.roleName}</option>
+                            <c:forEach var="role" items="${classList}">
+                                <option <c:if test="${role.getClassId() == classname }">selected="selected"</c:if>
+                                        value="${role.getClassId()}">${role.getClassName()}</option>
                             </c:forEach>
                         </c:if>
                     </select>
+                    <input	value="查 询" type="submit" id="searchbutton">
                 </form>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>学生学号</th>
+                            <th>学生姓名</th>
+                            <th>班级</th>
+                            <th>考勤时间</th>
+                            <th>考勤结果</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:if test="${classAttendance != null }">
+                            <c:forEach var="role" items="${classAttendance}">
+                                <tr>
+                                    <td>${role.getUserId()}</td>
+                                    <td>${role.getUserName()}</td>
+                                    <td>${role.getClassName()}</td>
+                                    <td>${role.getDateDay()}</td>
+                                    <td>${role.getAttenStatus()}</td>
+                                </tr>
+                            </c:forEach>
+                        </c:if>
+                        </tbody>
+                    </table>
             </div>
         </main>
     </div>

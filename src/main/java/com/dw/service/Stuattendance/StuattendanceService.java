@@ -15,6 +15,8 @@ public interface StuattendanceService {
     Stuattendance getStuattendanceById(int attendanceId);
     //查询根据UserID
     List<Stuattendance> getStuattendanceByUserId(String userId);
+    //根据班级查询考勤情况
+    List<Stuattendance> getStuattendanceByclassId(String classId);
     //新增考勤
     boolean addStuattendancele(Stuattendance stuattendance);
     //删除考勤

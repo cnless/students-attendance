@@ -31,4 +31,8 @@
         sum(case when t.CLASSID='91'and t.ATTEN_STATUS='出勤' then 1 else 0 end)*1.0/count(t.CLASSID='91' OR NULL) as num91
         from (select  b.CLASSID,a.ATTEN_STATUS from stuattendance a ,ma_user b where a.USER_ID=b.USER_ID) t
     </select>
+    <select id="getStuattendanceByClassid" resultType="classAttendance">
+        select a.USER_ID,a.USER_NAME,c.CLASS_NAME,b.DATE_DAY,b.ATTEN_STATUS from ma_user a,stuattendance b,ma_class c where a.USER_ID=b.USER_ID and a.CLASSID=c.CLASS_ID
+        and a.CLASSID=#{classId}
+    </select>
 </mapper>
