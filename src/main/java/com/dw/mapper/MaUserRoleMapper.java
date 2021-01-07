@@ -17,7 +17,7 @@ public interface MaUserRoleMapper {
     //插入
     int addMaUserRole(MaUserRole maUserRole);
     //删除根据ID
-    int deleteMaUserRoleById(String userIdKey,String roleIdKey);
+    int deleteMaUserRoleById(String userId);
     //修改根据ID
-    int updateMaUserRoleById(String old_userId,String old_roleId,String new_userId,String new_roleId);
+    int updateMaUserRoleById(MaUserRole maUserRole);
 }

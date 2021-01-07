@@ -37,4 +37,9 @@ public class MaUserServiceImpl implements MaUserService{
     public int updateMaUser(MaUser maUser) {
         return maUserMapper.updateMaUser(maUser);
     }
+
+    @Override
+    public String getRole(String userId) {
+        return maUserMapper.getRole(userId);
+    }
 }

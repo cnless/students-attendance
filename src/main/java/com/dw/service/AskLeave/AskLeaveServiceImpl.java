@@ -4,9 +4,10 @@ import com.dw.mapper.AskLeaveMapper;
 import com.dw.pojo.AskLeave;
 import com.dw.service.AskLeave.AskLeaveService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class AskLeaveServiceImpl implements AskLeaveService {
     @Autowired
     AskLeaveMapper askLeaveMapper;

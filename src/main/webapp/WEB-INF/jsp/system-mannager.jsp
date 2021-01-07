@@ -48,7 +48,68 @@
         <jsp:include page="sidebar.jsp"></jsp:include>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <h1>系统管理</h1>
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail" style=" width: auto;  height: auto;">
+                        <img src="/img/emps01.png" style="width: 100%;height: 100%"
+                             alt="功能及权限管理">
+                        <div class="caption" style="text-align: center">
+                            <h3>权限</h3>
+                            <p>功能及权限管理</p>
+                            <p>
+                                <a href="/crole" class="btn btn-primary" role="button">
+                                    进入
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail" style=" width: auto;  height: auto;">
+                        <img src="/img/emps02.png" style="width: 100%;height: 100%"
+                             alt="用户管理">
+                        <div class="caption" style="text-align: center">
+                            <h3>用户</h3>
+                            <p>用户管理</p>
+                            <p>
+                                <a href="/um" class="btn btn-primary" role="button">
+                                    进入
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3" style=" width: auto;  height: auto;">
+                    <div class="thumbnail">
+                        <img src="/img/emps03.png" style="width: 100%;height: 100%"
+                             alt="班级管理">
+                        <div class="caption" style="text-align: center">
+                            <h3>班级</h3>
+                            <p>班级管理</p>
+                            <p>
+                                <a href="" class="btn btn-primary" role="button">
+                                    进入
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3" style=" width: auto;  height: auto;">
+                    <div class="thumbnail">
+                        <img src="/img/emps04.png" style="width: 100%;height: 100%"
+                             alt="课程管理">
+                        <div class="caption" style="text-align: center">
+                            <h3>课程</h3>
+                            <p>课程管理</p>
+                            <p>
+                                <a href="" class="btn btn-primary" role="button">
+                                    进入
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </div>

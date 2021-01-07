@@ -19,10 +19,13 @@ class StudentsAttendanceApplicationTests {
     DataSource dataSource;
     @Autowired
     MaUserService maUserService;
+    @Autowired
+    MaUserMapper maUserMapper;
     @Test
     void contextLoads() throws SQLException {
+        MaUser maUser=maUserService.queryMaUserById("1");
+        System.out.println(maUser.getRoleId());
 
-        System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
     }
 
 }

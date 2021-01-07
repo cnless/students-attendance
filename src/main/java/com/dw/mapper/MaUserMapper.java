@@ -13,5 +13,5 @@ public interface MaUserMapper {
     int addMaUser(MaUser maUser);
     int deleteMaUser(String userId);
     int updateMaUser(MaUser maUser);
-
+    String getRole(String userId);
 }

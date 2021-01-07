@@ -70,23 +70,23 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             <form action="/updateUser" method="post">
-                <input type="hidden" name="userId" value="${maUser.getUserId()}">
+                <input type="hidden" name="userId" value="${currentUser.getUserId()}">
                 <div class="form-group">
                     <label>姓名</label>
-                    <input value="${maUser.getUserName()}" type="text" class="form-control" placeholder="请输入姓名" name="userName" id="userName">
+                    <input value="${currentUser.getUserName()}" type="text" class="form-control" placeholder="请输入姓名" name="userName" id="userName">
                 </div>
                 <div class="form-group">
                     <label>密码</label>
-                    <input value="${maUser.getPasswd()}" type="password" class="form-control" placeholder="请输入密码" name="passwd" id="passwd">
+                    <input value="${currentUser.getPasswd()}" type="password" class="form-control" placeholder="请输入密码" name="passwd" id="passwd">
                 </div>
                 <input type="hidden" name="lastUpdateDt" value="${ludt}">
                 <div class="form-group">
                     <label>修改人</label>
-                    <input value="${maUser.getLastUpdateUser()}" type="text" class="form-control" placeholder="请输入修改人名字" name="lastUpdateName">
+                    <input value="${currentUser.getLastUpdateUser()}" type="text" class="form-control" placeholder="请输入修改人名字" name="lastUpdateUser">
                 </div>
                 <div class="form-group">
                     <label>班级</label>
-                    <input value="${maUser.getClassid()}" type="text" class="form-control" placeholder="请输入班级" name="classid" id="classid">
+                    <input value="${currentUser.getClassid()}" type="text" class="form-control" placeholder="请输入班级" name="classid" id="classid">
                 </div>
                 <button type="submit" class="btn btn-primary" onclick="bubmi()">修改</button>
                 <label style="color: red">${msg}</label>

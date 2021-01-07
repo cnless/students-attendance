@@ -3,9 +3,10 @@ package com.dw.service.MaUserRole;
 import com.dw.mapper.MaUserRoleMapper;
 import com.dw.pojo.MaUserRole;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class MaUserRoleServiceImpl implements MaUserRoleService{
     @Autowired
     MaUserRoleMapper maUserRoleMapper;
@@ -29,18 +30,18 @@ public class MaUserRoleServiceImpl implements MaUserRoleService{
     }
 
     @Override
-    public boolean deleteMaUserRoleById(String userIdKey, String roleIdKey) {
+    public boolean deleteMaUserRoleById(String userId) {
         boolean flag=false;
-        if(maUserRoleMapper.deleteMaUserRoleById(userIdKey, roleIdKey)>0){
+        if(maUserRoleMapper.deleteMaUserRoleById(userId)>0){
             flag=true;
         }
         return flag;
     }
 
     @Override
-    public boolean updateMaUserRoleById(String old_userId, String old_roleId, String new_userId, String new_roleId) {
+    public boolean updateMaUserRoleById(MaUserRole maUserRole) {
         boolean flag=false;
-        if(maUserRoleMapper.updateMaUserRoleById(old_userId, old_roleId, new_userId, new_roleId)>0){
+        if(maUserRoleMapper.updateMaUserRoleById(maUserRole)>0){
             flag=true;
         }
         return flag;

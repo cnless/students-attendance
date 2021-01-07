@@ -3,9 +3,10 @@ package com.dw.service.Stuattendance;
 import com.dw.mapper.StuattendanceMapper;
 import com.dw.pojo.Stuattendance;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class StuattendanceServiceImpl implements StuattendanceService{
     @Autowired
     StuattendanceMapper stuattendanceMapper;

@@ -14,11 +14,11 @@
         values (#{UserId},#{RoleId})
     </insert>
     <delete id="deleteMaUserRoleById" parameterType="String">
-        delete from ma_user_role where User_ID=#{userIdKey} and Role_ID=#{roleIdKey}
+        delete from ma_user_role where User_ID=#{userId}
     </delete>
     <update id="updateMaUserRoleById" parameterType="MaUserRole" >
-        update ma_user_role set USER_ID=#{new_userId},ROLE_ID=#{new_roleId}
-        where USER_ID=#{old_userId} and ROLE_ID=#{old_roleId}
+        update ma_user_role set ROLE_ID=#{roleId}
+        where USER_ID=#{userId}
 
     </update>
 </mapper>

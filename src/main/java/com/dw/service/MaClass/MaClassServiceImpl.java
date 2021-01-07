@@ -3,9 +3,10 @@ package com.dw.service.MaClass;
 import com.dw.mapper.MaClassMapper;
 import com.dw.pojo.MaClass;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class MaClassServiceImpl implements MaClassService{
     @Autowired
     MaClassMapper maClassMapper;

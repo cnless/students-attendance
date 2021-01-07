@@ -12,6 +12,6 @@ public interface MaUserRoleService {
     //新增用户-角色对应关系
     boolean addMaUserRole(MaUserRole maUserRole);
     //删除用户-角色对应关系
-    boolean deleteMaUserRoleById(String userIdKey,String roleIdKey);
+    boolean deleteMaUserRoleById(String userId);
     //修改用户-角色对应关系
-    boolean updateMaUserRoleById(String old_userId,String old_roleId,String new_userId,String new_roleId);}
+    boolean updateMaUserRoleById(MaUserRole maUserRole);}

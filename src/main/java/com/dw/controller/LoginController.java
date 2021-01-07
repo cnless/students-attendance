@@ -30,7 +30,7 @@ public class LoginController {
 
             subject.login(token);
             MaUser currentUser=maUserService.queryMaUserById(username);
-            session.setAttribute("maUser",currentUser);
+            session.setAttribute("currentUser",currentUser);
             model.addAttribute("currentPage","main.jsp");
             return "jsp/main";
         } catch (UnknownAccountException e) {

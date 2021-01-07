@@ -16,9 +16,10 @@ public class MainController {
     MaUserService maUserService;
     @PostMapping("/updateUser")
     public String updateU(MaUser maUser, Model model){
-        int rs=maUserService.updateMaUser(maUser);
         String ludt=new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         model.addAttribute("ludt",ludt);
+        maUser.setLastUpdateDt(ludt);
+        int rs=maUserService.updateMaUser(maUser);
         if(rs>=1){
             model.addAttribute("msg","更新成功");
         }else {

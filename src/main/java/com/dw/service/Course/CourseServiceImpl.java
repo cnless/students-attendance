@@ -3,9 +3,10 @@ package com.dw.service.Course;
 import com.dw.mapper.CourseMapper;
 import com.dw.pojo.Course;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class CourseServiceImpl implements CourseService{
     @Autowired
     CourseMapper courseMapper;
