@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @Component
 public class MaUser {
@@ -43,5 +42,14 @@ public class MaUser {
         }else {
             return id;
         }
+    }
+
+    public MaUser(String userId, String userName, String passwd, String lastUpdateDt, String lastUpdateUser, String classid) {
+        this.userId = userId;
+        this.userName = userName;
+        this.passwd = passwd;
+        this.lastUpdateDt = lastUpdateDt;
+        this.lastUpdateUser = lastUpdateUser;
+        this.classid = classid;
     }
 }
