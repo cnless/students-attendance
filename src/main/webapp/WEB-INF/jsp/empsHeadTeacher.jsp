@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>show</title>
@@ -25,7 +26,20 @@
         <jsp:include page="sidebar.jsp"></jsp:include>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <h2>班主任班级查看界面</h2>
+            <div class="search">
+                <form method="get" action="/Teacher.do">
+                    <span>班级</span>
+                    <select name="queryUserRole">
+                        <c:if test="${roleList != null }">
+                            <option value="0">--请选择--</option>
+                            <c:forEach var="role" items="${roleList}">
+                                <option <c:if test="${role.id == queryUserRole }">selected="se ected"</c:if>
+                                        value="${role.id}">${role.roleName}</option>
+                            </c:forEach>
+                        </c:if>
+                    </select>
+                </form>
+            </div>
         </main>
     </div>
 </div>

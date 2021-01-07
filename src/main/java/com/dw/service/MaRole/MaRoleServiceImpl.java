@@ -3,10 +3,9 @@ package com.dw.service.MaRole;
 import com.dw.mapper.MaRoleMapper;
 import com.dw.pojo.MaRole;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
+
 public class MaRoleServiceImpl implements MaRoleService{
     @Autowired
     MaRoleMapper maRoleMapper;

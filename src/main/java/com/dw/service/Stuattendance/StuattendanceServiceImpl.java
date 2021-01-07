@@ -1,11 +1,14 @@
 package com.dw.service.Stuattendance;
 
 import com.dw.mapper.StuattendanceMapper;
+import com.dw.pojo.Attendance;
 import com.dw.pojo.Stuattendance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+
 @Service
 public class StuattendanceServiceImpl implements StuattendanceService{
     @Autowired
@@ -16,8 +19,18 @@ public class StuattendanceServiceImpl implements StuattendanceService{
     }
 
     @Override
+    public Attendance getClassAttendance() {
+        return stuattendanceMapper.getClassAttendance();
+    }
+
+    @Override
     public Stuattendance getStuattendanceById(int attendanceId) {
         return stuattendanceMapper.getStuattendanceById(attendanceId);
+    }
+
+    @Override
+    public List<Stuattendance> getStuattendanceByUserId(String userId) {
+        return stuattendanceMapper.getStuattendanceByUserId(userId);
     }
 
     @Override

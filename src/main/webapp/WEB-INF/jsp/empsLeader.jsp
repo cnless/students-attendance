@@ -24,12 +24,34 @@
 <div class="container-fluid">
     <div class="row">
         <jsp:include page="sidebar.jsp"></jsp:include>
-
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                        <select name="province_code" class="form-control combox" ref="city_select"
+                                refUrl="${ctx}/procity?pro_code={value}&city_code=HSLY">
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <select name="city_code" id="city_select" class="form-control">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                <!--
+                $(function() {
+                    if ($.fn.combox) {
+                        $("select.combox", $p).combox();
+                    }
+                });
+                //-->
+            </script>
+
 
 
             <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-            <div id="main" style="width: 600px;height:400px;"></div>
+            <div id="main" style="width: 100%;height:100%;"></div>
             <script type="text/javascript">
                 // 基于准备好的dom，初始化echarts实例
                 var myChart = echarts.init(document.getElementById('main'));
@@ -37,20 +59,20 @@
                 // 指定图表的配置项和数据
                 var option = {
                     title: {
-                        text: 'ECharts 入门示例'
+                        text: '班级出勤率'
                     },
                     tooltip: {},
                     legend: {
-                        data:['销量']
+                        data:['出勤率']
                     },
                     xAxis: {
-                        data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                        data:[${className[0]},${className[1]},${className[2]},${className[3]},${className[4]}]
                     },
                     yAxis: {},
                     series: [{
-                        name: '销量',
+                        name: '出勤率',
                         type: 'bar',
-                        data: [5, 20, 36, 10, 10, 20]
+                        data:[${attendance.getNum71()},${attendance.getNum72()},${attendance.getNum81()},${attendance.getNum82()},${attendance.getNum91()}]
                     }]
                 };
 

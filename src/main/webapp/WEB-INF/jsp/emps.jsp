@@ -34,7 +34,7 @@
                             <h3>录入</h3>
                             <p>录入学生考勤信息。</p>
                             <p>
-                                <a href="/student" class="btn btn-primary" role="button">
+                                <a href="/teacher" class="btn btn-primary" role="button">
                                     录入
                                 </a>
                             </p>
@@ -49,7 +49,7 @@
                             <h3>个人</h3>
                             <p>个人出勤信息查看。</p>
                             <p>
-                                <a href="/teacher" class="btn btn-primary" role="button">
+                                <a href="/student" class="btn btn-primary" role="button">
                                     查看
                                 </a>
                             </p>

@@ -11,7 +11,7 @@
     </select>
     <insert id="addMaUser" parameterType="MaUser">
         insert into ma_user (USER_ID,USER_NAME,PASSWD,LAST_UPDATE_DT,LAST_UPDATE_USER,CLASSID)
-        values (#{userId},#{userName},#{passwd},#{lastUpdateDt},#{lastUpateUser},#{classid})
+        values (#{userId},#{userName},#{passwd},#{lastUpdateDt},#{lastUpdateUser},#{classid})
     </insert>
     <delete id="deleteMaUser">
         delete from ma_user where USER_ID=#{userId}
